@@ -469,8 +469,8 @@ LRESULT CALLBACK RollCallWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM 
                     KillTimer(hwnd, TIMER_ID);
                     g_isRolling = false;
 
-                    // 播放beep声提示点名完成
-                    Beep(800, 200); // 800Hz频率，200ms持续时间
+                    // 播放系统beep声提示点名完成
+                    MessageBeep(MB_ICONASTERISK); // 使用系统默认提示音
 
                     InvalidateRect(hwnd, NULL, TRUE); // 最后一次重绘显示最终结果
                 }
