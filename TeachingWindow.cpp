@@ -549,11 +549,11 @@ HWND g_hSettingsWindow = NULL;
 LRESULT CALLBACK SettingsWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch (uMsg) {
         case WM_CREATE: {
-            // 调整窗口大小以适应更多控件
-            SetWindowPos(hwnd, NULL, 0, 0, S(450), S(450), SWP_NOMOVE | SWP_NOZORDER); // 增加高度
+            // 美化设置窗口 - 设置更大且更美观的窗口
+            SetWindowPos(hwnd, NULL, 0, 0, S(600), S(550), SWP_NOMOVE | SWP_NOZORDER); // 增加宽度和高度
 
-            // 字体设置
-            HFONT hFont = CreateFontW(S(14), 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS, L"微软雅黑");
+            // 美化字体设置 - 使用更大更清晰的字体
+            HFONT hFont = CreateFontW(S(16), 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS, L"微软雅黑");
 
             // URL 设置组
             int urlY = S(20);
@@ -764,7 +764,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
             
             // 创建按钮字体（加大文字，加粗显示）
             HFONT buttonFont = CreateFontW(
-                S(13), 0, 0, 0, FW_EXTRABOLD, FALSE, FALSE, FALSE,
+                S(16), 0, 0, 0, FW_EXTRABOLD, FALSE, FALSE, FALSE,
                 DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
                 DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, L"微软雅黑"
             );
