@@ -163,7 +163,7 @@ const UINT_PTR TIMER_ID = 1;        // 定时器ID
 // 105班学生名单
 const wchar_t* students105[] = {
     L"李唐玄烨", L"张鑫磊", L"陆培林", L"包卓林", L"刘锦承",
-    L"韩泽恺", L"周谦宇", L"冯畅", L"邓润松", L"范俊祥",
+    L"韩泽恺", L"周谦宇", L"冯畅", L"邓润松",
     L"黄轲", L"李添", L"李希振", L"方世博", L"胡泽昱",
     L"罗灵烨", L"董嘉豪", L"张腾文", L"程宇轩", L"毛智楷",
     L"刘鹏玮", L"张羽杰", L"程镇江", L"黄俊轩", L"向奕豪",
@@ -468,6 +468,10 @@ LRESULT CALLBACK RollCallWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM 
                     // 动画结束，停止定时器，显示最终结果
                     KillTimer(hwnd, TIMER_ID);
                     g_isRolling = false;
+
+                    // 播放beep声提示点名完成
+                    Beep(800, 200); // 800Hz频率，200ms持续时间
+
                     InvalidateRect(hwnd, NULL, TRUE); // 最后一次重绘显示最终结果
                 }
             }
