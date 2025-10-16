@@ -762,9 +762,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
                 L"备课", L"班级", L"补充"
             };
             
-            // 创建按钮字体（加大文字）
+            // 创建按钮字体（加大文字，加粗显示）
             HFONT buttonFont = CreateFontW(
-                S(11), 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE,
+                S(13), 0, 0, 0, FW_EXTRABOLD, FALSE, FALSE, FALSE,
                 DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
                 DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, L"微软雅黑"
             );
